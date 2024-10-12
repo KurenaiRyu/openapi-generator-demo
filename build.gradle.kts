@@ -32,34 +32,40 @@ idea {
 
 val generatedRoot = "generated/openapi"
 
-val generateApi0 = tasks.register("generateApi0", GenerateTask::class) {
-    generatorName.set("kotlin")
-    inputSpec.set("$projectDir/openapi.json")
-    outputDir.set(layout.buildDirectory.file(generatedRoot).get().asFile.absolutePath)
-    packageName.set("moe.kurenai.bangumi")
-    apiNameSuffix.set("BangumiApi")
-    removeOperationIdPrefix = true
+fun generateAction(specPath: String, pkgName: String, apiSuffix: String): Action<GenerateTask> {
+    return Action<GenerateTask> {
+        generatorName.set("kotlin")
+        inputSpec.set(specPath)
+        outputDir.set(layout.buildDirectory.file(generatedRoot).get().asFile.absolutePath)
+        packageName.set(pkgName)
+        apiNameSuffix.set(apiSuffix)
+        removeOperationIdPrefix = true
 
-    additionalProperties.set(
-        mapOf(
-            "apiSuffix" to "Bangumi",
-            "library" to "jvm-ktor",
-            "dateLibrary" to "kotlinx-datetime",
-            "serializationLibrary" to "kotlinx_serialization",
-            "enumPropertyNaming" to "UPPERCASE",
+        additionalProperties.set(
+            mapOf(
+                "apiSuffix" to apiSuffix,
+                "library" to "jvm-ktor",
+                "dateLibrary" to "java8",
+                "serializationLibrary" to "kotlinx_serialization",
+                "enumPropertyNaming" to "UPPERCASE",
 //            "generateOneOfAnyOfWrappers" to "true",
-            "omitGradleWrapper" to "true",
-        ),
-    )
+                "omitGradleWrapper" to "true",
+            ),
+        )
 
-    generateModelTests.set(false)
-    generateApiTests.set(false)
-    generateApiDocumentation.set(false)
-    generateModelDocumentation.set(false)
+        generateModelTests.set(false)
+        generateApiTests.set(false)
+        generateApiDocumentation.set(false)
+        generateModelDocumentation.set(false)
+    }
 }
+
+val generateApi0 = tasks.register("generateApi0", GenerateTask::class, generateAction("$projectDir/openapi.json", "moe.kurenai.bangumi", "BangumiApi"))
+val generateApiOauth = tasks.register("generateApiOauth", GenerateTask::class, generateAction("$projectDir/oauth.yaml","moe.kurenai.bangumi.oauth", "BangumiApi"))
 
 val copyGenerateApiToSrc = tasks.register("copyGenerateApiToSrc", Copy::class) {
     dependsOn(generateApi0)
+    dependsOn(generateApiOauth)
     from(layout.buildDirectory.dir("$generatedRoot/src"))
     into("${projectDir}/src")
 }
