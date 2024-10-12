@@ -16,35 +16,35 @@
   ],
   "tags": [
     {
-      "name": "条目"
+      "name": "Subject"
     },
     {
-      "name": "章节"
+      "name": "Episode"
     },
     {
-      "name": "角色"
+      "name": "Character"
     },
     {
-      "name": "人物"
+      "name": "Person"
     },
     {
-      "name": "用户"
+      "name": "User"
     },
     {
-      "name": "收藏"
+      "name": "Collection"
     },
     {
-      "name": "编辑历史"
+      "name": "Revision"
     },
     {
-      "name": "目录"
+      "name": "Index"
     }
   ],
   "paths": {
     "/calendar": {
       "get": {
         "tags": [
-          "条目"
+          "Subject"
         ],
         "summary": "每日放送",
         "operationId": "getCalendar",
@@ -97,7 +97,7 @@
     "/search/subject/{keywords}": {
       "get": {
         "tags": [
-          "搜索"
+          "Search"
         ],
         "summary": "条目搜索",
         "operationId": "searchSubjectByKeywords",
@@ -222,7 +222,7 @@
     "/v0/search/subjects": {
       "post": {
         "tags": [
-          "条目"
+          "Subject"
         ],
         "summary": "条目搜索",
         "operationId": "searchSubjects",
@@ -431,7 +431,7 @@
     "/v0/subjects": {
       "get": {
         "tags": [
-          "条目"
+          "Subject"
         ],
         "summary": "浏览条目",
         "description": "第一页会 cache 24h，之后会 cache 1h",
@@ -550,7 +550,7 @@
     "/v0/subjects/{subject_id}": {
       "get": {
         "tags": [
-          "条目"
+          "Subject"
         ],
         "summary": "获取条目",
         "description": "cache with 300s",
@@ -602,7 +602,7 @@
     "/v0/subjects/{subject_id}/image": {
       "get": {
         "tags": [
-          "条目"
+          "Subject"
         ],
         "summary": "Get Subject Image",
         "operationId": "getSubjectImageById",
@@ -664,7 +664,7 @@
     "/v0/subjects/{subject_id}/persons": {
       "get": {
         "tags": [
-          "条目"
+          "Subject"
         ],
         "summary": "Get Subject Persons",
         "operationId": "getRelatedPersonsBySubjectId",
@@ -718,7 +718,7 @@
     "/v0/subjects/{subject_id}/characters": {
       "get": {
         "tags": [
-          "条目"
+          "Subject"
         ],
         "summary": "Get Subject Characters",
         "operationId": "getRelatedCharactersBySubjectId",
@@ -772,7 +772,7 @@
     "/v0/subjects/{subject_id}/subjects": {
       "get": {
         "tags": [
-          "条目"
+          "Subject"
         ],
         "summary": "Get Subject Relations",
         "operationId": "getRelatedSubjectsBySubjectId",
@@ -826,7 +826,7 @@
     "/v0/episodes": {
       "get": {
         "tags": [
-          "章节"
+          "Episode"
         ],
         "summary": "Get Episodes",
         "operationId": "getEpisodes",
@@ -917,7 +917,7 @@
     "/v0/episodes/{episode_id}": {
       "get": {
         "tags": [
-          "章节"
+          "Episode"
         ],
         "summary": "Get Episode",
         "operationId": "getEpisodeById",
@@ -968,7 +968,7 @@
     "/v0/characters/{character_id}": {
       "get": {
         "tags": [
-          "角色"
+          "Character"
         ],
         "summary": "Get Character Detail",
         "description": "cache with 60s",
@@ -1015,7 +1015,7 @@
     "/v0/characters/{character_id}/image": {
       "get": {
         "tags": [
-          "角色"
+          "Character"
         ],
         "summary": "Get Character Image",
         "operationId": "getCharacterImageById",
@@ -1077,7 +1077,7 @@
     "/v0/characters/{character_id}/subjects": {
       "get": {
         "tags": [
-          "角色"
+          "Character"
         ],
         "summary": "get character related subjects",
         "operationId": "getRelatedSubjectsByCharacterId",
@@ -1126,7 +1126,7 @@
     "/v0/characters/{character_id}/persons": {
       "get": {
         "tags": [
-          "角色"
+          "Character"
         ],
         "summary": "get character related persons",
         "operationId": "getRelatedPersonsByCharacterId",
@@ -1175,7 +1175,7 @@
     "/v0/characters/{character_id}/collect": {
       "post": {
         "tags": [
-          "角色"
+          "Character"
         ],
         "summary": "Collect character for current user",
         "operationId": "collectCharacterByCharacterIdAndUserId",
@@ -1228,7 +1228,7 @@
       },
       "delete": {
         "tags": [
-          "角色"
+          "Character"
         ],
         "summary": "Uncollect character for current user",
         "operationId": "uncollectCharacterByCharacterIdAndUserId",
@@ -1283,7 +1283,7 @@
     "/v0/persons/{person_id}": {
       "get": {
         "tags": [
-          "人物"
+          "Person"
         ],
         "summary": "Get Person",
         "description": "cache with 60s",
@@ -1330,7 +1330,7 @@
     "/v0/persons/{person_id}/image": {
       "get": {
         "tags": [
-          "人物"
+          "Person"
         ],
         "summary": "Get Person Image",
         "operationId": "getPersonImageById",
@@ -1392,7 +1392,7 @@
     "/v0/persons/{person_id}/subjects": {
       "get": {
         "tags": [
-          "人物"
+          "Person"
         ],
         "summary": "get person related subjects",
         "operationId": "getRelatedSubjectsByPersonId",
@@ -1441,7 +1441,7 @@
     "/v0/persons/{person_id}/characters": {
       "get": {
         "tags": [
-          "人物"
+          "Person"
         ],
         "summary": "get person related characters",
         "operationId": "getRelatedCharactersByPersonId",
@@ -1490,7 +1490,7 @@
     "/v0/persons/{person_id}/collect": {
       "post": {
         "tags": [
-          "人物"
+          "Person"
         ],
         "summary": "Collect person for current user",
         "operationId": "collectPersonByPersonIdAndUserId",
@@ -1543,7 +1543,7 @@
       },
       "delete": {
         "tags": [
-          "人物"
+          "Person"
         ],
         "summary": "Uncollect person for current user",
         "operationId": "uncollectPersonByPersonIdAndUserId",
@@ -1598,7 +1598,7 @@
     "/v0/users/{username}": {
       "get": {
         "tags": [
-          "用户"
+          "User"
         ],
         "summary": "Get User by name",
         "description": "获取用户信息",
@@ -1645,7 +1645,7 @@
     "/v0/users/{username}/avatar": {
       "get": {
         "tags": [
-          "用户"
+          "User"
         ],
         "summary": "Get User Avatar by name",
         "description": "获取用户头像，302 重定向至头像地址，设置了 username 之后无法使用 UID 查询。",
@@ -1703,7 +1703,7 @@
     "/v0/me": {
       "get": {
         "tags": [
-          "用户"
+          "User"
         ],
         "summary": "Get User",
         "description": "返回当前 Access Token 对应的用户信息",
@@ -1753,7 +1753,7 @@
     "/v0/users/{username}/collections": {
       "get": {
         "tags": [
-          "收藏"
+          "Collection"
         ],
         "summary": "获取用户收藏",
         "description": "获取对应用户的收藏，查看私有收藏需要access token。",
@@ -1834,7 +1834,7 @@
     "/v0/users/{username}/collections/{subject_id}": {
       "get": {
         "tags": [
-          "收藏"
+          "Collection"
         ],
         "summary": "获取用户单个条目收藏",
         "description": "获取对应用户的收藏，查看私有收藏需要 access token",
@@ -1889,7 +1889,7 @@
     "/v0/users/-/collections/{subject_id}": {
       "post": {
         "tags": [
-          "收藏"
+          "Collection"
         ],
         "summary": "新增或修改用户单个条目收藏",
         "description": "修改条目收藏状态, 如果不存在则创建，如果存在则修改\n\n由于直接修改剧集条目的完成度可能会引起意料之外效果，只能用于修改书籍类条目的完成度。\n\n方法的所有请求体字段均可选\n",
@@ -1951,7 +1951,7 @@
       },
       "patch": {
         "tags": [
-          "收藏"
+          "Collection"
         ],
         "summary": "修改用户单个收藏",
         "description": "修改条目收藏状态\n\n由于直接修改剧集条目的完成度可能会引起意料之外效果，只能用于修改书籍类条目的完成度。\n\nPATCH 方法的所有请求体字段均可选\n",
@@ -2015,7 +2015,7 @@
     "/v0/users/-/collections/{subject_id}/episodes": {
       "get": {
         "tags": [
-          "收藏"
+          "Collection"
         ],
         "summary": "章节收藏信息",
         "operationId": "getUserSubjectEpisodeCollection",
@@ -2114,7 +2114,7 @@
       },
       "patch": {
         "tags": [
-          "收藏"
+          "Collection"
         ],
         "summary": "章节收藏信息",
         "description": "同时会重新计算条目的完成度\n",
@@ -2198,7 +2198,7 @@
     "/v0/users/-/collections/-/episodes/{episode_id}": {
       "get": {
         "tags": [
-          "收藏"
+          "Collection"
         ],
         "summary": "章节收藏信息",
         "operationId": "getUserEpisodeCollection",
@@ -2257,7 +2257,7 @@
       },
       "put": {
         "tags": [
-          "收藏"
+          "Collection"
         ],
         "summary": "更新章节收藏信息",
         "operationId": "putUserEpisodeCollection",
@@ -2328,7 +2328,7 @@
     "/v0/users/{username}/collections/-/characters": {
       "get": {
         "tags": [
-          "收藏"
+          "Collection"
         ],
         "summary": "获取用户角色收藏列表",
         "operationId": "getUserCharacterCollections",
@@ -2364,7 +2364,7 @@
     "/v0/users/{username}/collections/-/characters/{character_id}": {
       "get": {
         "tags": [
-          "收藏"
+          "Collection"
         ],
         "summary": "获取用户单个角色收藏信息",
         "operationId": "getUserCharacterCollection",
@@ -2413,7 +2413,7 @@
     "/v0/users/{username}/collections/-/persons": {
       "get": {
         "tags": [
-          "收藏"
+          "Collection"
         ],
         "summary": "获取用户人物收藏列表",
         "operationId": "getUserPersonCollections",
@@ -2449,7 +2449,7 @@
     "/v0/users/{username}/collections/-/persons/{person_id}": {
       "get": {
         "tags": [
-          "收藏"
+          "Collection"
         ],
         "summary": "获取用户单个人物收藏信息",
         "operationId": "getUserPersonCollection",
@@ -2498,7 +2498,7 @@
     "/v0/revisions/persons": {
       "get": {
         "tags": [
-          "编辑历史"
+          "Revision"
         ],
         "summary": "Get Person Revisions",
         "operationId": "getPersonRevisions",
@@ -2548,7 +2548,7 @@
     "/v0/revisions/persons/{revision_id}": {
       "get": {
         "tags": [
-          "编辑历史"
+          "Revision"
         ],
         "summary": "Get Person Revision",
         "operationId": "getPersonRevisionByRevisionId",
@@ -2602,7 +2602,7 @@
     "/v0/revisions/characters": {
       "get": {
         "tags": [
-          "编辑历史"
+          "Revision"
         ],
         "summary": "Get Character Revisions",
         "operationId": "getCharacterRevisions",
@@ -2652,7 +2652,7 @@
     "/v0/revisions/characters/{revision_id}": {
       "get": {
         "tags": [
-          "编辑历史"
+          "Revision"
         ],
         "summary": "Get Character Revision",
         "operationId": "getCharacterRevisionByRevisionId",
@@ -2698,7 +2698,7 @@
     "/v0/revisions/subjects": {
       "get": {
         "tags": [
-          "编辑历史"
+          "Revision"
         ],
         "summary": "Get Subject Revisions",
         "operationId": "getSubjectRevisions",
@@ -2748,7 +2748,7 @@
     "/v0/revisions/subjects/{revision_id}": {
       "get": {
         "tags": [
-          "编辑历史"
+          "Revision"
         ],
         "summary": "Get Subject Revision",
         "operationId": "getSubjectRevisionByRevisionId",
@@ -2794,7 +2794,7 @@
     "/v0/revisions/episodes": {
       "get": {
         "tags": [
-          "编辑历史"
+          "Revision"
         ],
         "summary": "Get Episode Revisions",
         "operationId": "getEpisodeRevisions",
@@ -2844,7 +2844,7 @@
     "/v0/revisions/episodes/{revision_id}": {
       "get": {
         "tags": [
-          "编辑历史"
+          "Revision"
         ],
         "summary": "Get Episode Revision",
         "operationId": "getEpisodeRevisionByRevisionId",
@@ -2890,7 +2890,7 @@
     "/v0/indices": {
       "post": {
         "tags": [
-          "目录"
+          "Index"
         ],
         "summary": "Create a new index",
         "operationId": "newIndex",
@@ -2926,7 +2926,7 @@
     "/v0/indices/{index_id}": {
       "get": {
         "tags": [
-          "目录"
+          "Index"
         ],
         "summary": "Get Index By ID",
         "operationId": "getIndexById",
@@ -2958,7 +2958,7 @@
       },
       "put": {
         "tags": [
-          "目录"
+          "Index"
         ],
         "summary": "Edit index's information",
         "operationId": "editIndexById",
@@ -3007,7 +3007,7 @@
     "/v0/indices/{index_id}/subjects": {
       "get": {
         "tags": [
-          "目录"
+          "Index"
         ],
         "summary": "Get Index Subjects",
         "operationId": "getIndexSubjectsByIndexId",
@@ -3050,7 +3050,7 @@
       },
       "post": {
         "tags": [
-          "目录"
+          "Index"
         ],
         "summary": "Add a subject to Index",
         "operationId": "addSubjectToIndexByIndexId",
@@ -3092,7 +3092,7 @@
     "/v0/indices/{index_id}/subjects/{subject_id}": {
       "put": {
         "tags": [
-          "目录"
+          "Index"
         ],
         "summary": "Edit subject information in a index",
         "operationId": "editIndexSubjectsByIndexIdAndSubjectID",
@@ -3136,7 +3136,7 @@
       },
       "delete": {
         "tags": [
-          "目录"
+          "Index"
         ],
         "summary": "Delete a subject from a Index",
         "operationId": "delelteSubjectFromIndexByIndexIdAndSubjectID",
@@ -3169,7 +3169,7 @@
     "/v0/indices/{index_id}/collect": {
       "post": {
         "tags": [
-          "目录"
+          "Index"
         ],
         "summary": "Collect index for current user",
         "operationId": "collectIndexByIndexIdAndUserId",
@@ -3201,7 +3201,7 @@
       },
       "delete": {
         "tags": [
-          "目录"
+          "Index"
         ],
         "summary": "Uncollect index for current user",
         "operationId": "uncollectIndexByIndexIdAndUserId",
@@ -3851,7 +3851,7 @@
         }
       },
       "Legacy_Mono": {
-        "description": "人物",
+        "description": "Person",
         "allOf": [
           {
             "$ref": "#/components/schemas/Legacy_MonoBase"
