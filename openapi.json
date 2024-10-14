@@ -11,7 +11,12 @@
   },
   "servers": [
     {
-      "url": "https://api.bgm.tv"
+      "url": "https://api.bgm.tv",
+      "description": "The API server"
+    },
+    {
+      "url": "https://bgm.tv",
+      "description": "The OAuth server"
     }
   ],
   "tags": [

@@ -32,7 +32,7 @@ idea {
 
 val generatedRoot = "generated/openapi"
 
-fun generateAction(specPath: String, pkgName: String, apiSuffix: String): Action<GenerateTask> {
+fun generateAction(specPath: String, pkgName: String = "moe.kurenai.bangumi", apiSuffix: String = "BangumiApi"): Action<GenerateTask> {
     return Action<GenerateTask> {
         generatorName.set("kotlin")
         inputSpec.set(specPath)
@@ -53,15 +53,15 @@ fun generateAction(specPath: String, pkgName: String, apiSuffix: String): Action
             ),
         )
 
-        generateModelTests.set(false)
-        generateApiTests.set(false)
+        generateModelTests.set(true)
+        generateApiTests.set(true)
         generateApiDocumentation.set(false)
         generateModelDocumentation.set(false)
     }
 }
 
-val generateApi0 = tasks.register("generateApi0", GenerateTask::class, generateAction("$projectDir/openapi.json", "moe.kurenai.bangumi", "BangumiApi"))
-val generateApiOauth = tasks.register("generateApiOauth", GenerateTask::class, generateAction("$projectDir/oauth.yaml","moe.kurenai.bangumi.oauth", "BangumiApi"))
+val generateApi0 = tasks.register("generateApi0", GenerateTask::class, generateAction("$projectDir/openapi.json"))
+val generateApiOauth = tasks.register("generateApiOauth", GenerateTask::class, generateAction("$projectDir/oauth.yaml"))
 
 val copyGenerateApiToSrc = tasks.register("copyGenerateApiToSrc", Copy::class) {
     dependsOn(generateApi0)
